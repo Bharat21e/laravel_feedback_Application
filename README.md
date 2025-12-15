@@ -8,3 +8,6 @@ admin can see all the user and reviews and can change the status of feedback thi
 
 
 In the update in this code to download csv file admin
+
+
+In database sql file return sql code that is created tabel in xampp database
