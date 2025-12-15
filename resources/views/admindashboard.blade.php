@@ -40,7 +40,9 @@
     @endforeach
 
 </table>
-
+<a href="{{ route('downloadcsv') }}"  >
+    <button id="btn">Download</button>
+</a>
   
 </div>
 
@@ -121,6 +123,17 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+
+    #btn{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 10px 35px;
+        border: none;
+        border-radius:10px;
+        background: #007bff;
+        color:white;
+        font-weight:500;
+        margin-top:15px
     }
 </style>
 
