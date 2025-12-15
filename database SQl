@@ -1,0 +1,29 @@
+USER TABLE
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` datetime NOT NULL,
+  `role` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+FEEDBACK TABEL STRUCTUER
+
+  CREATE TABLE `feedbacks` (
+  `id` int(30) NOT NULL,
+  `user_id` int(30) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `message` varchar(1000) NOT NULL,
+  `status` varchar(30) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+  
+
+
+  
