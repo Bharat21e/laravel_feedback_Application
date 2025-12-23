@@ -10,6 +10,7 @@ use App\Http\Controllers\admincontrller;
 use App\Http\Controllers\StatusUpdateController;
 use App\Http\Controllers\Csvfilemaker;
 use App\Http\Controllers\feedbackcontroller;
+use App\Http\Controllers\mailcontroller;
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canRegister' => Features::enabled(Features::registration()),
@@ -57,5 +58,6 @@ Route::get('admindashboard', [admincontrller::class, 'adminDashboard'])->name('a
 
 Route::post('/statuschange/{id}', [StatusUpdateController::class, 'statuschange'])
     ->name('updateStatus');
-Route::get('/downloadcsv' ,[Csvfilemaker::class,'csvDownload'])->name('downloadcsv');    
+Route::get('/downloadcsv' ,[Csvfilemaker::class,'csvDownload'])->name('downloadcsv');   
+Route::post('sendmail', [mailcontroller::class, 'sendmail'])->name('sendmail'); 
 require __DIR__.'/settings.php';
