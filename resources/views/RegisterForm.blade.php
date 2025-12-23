@@ -2,12 +2,12 @@
     <!-- When there is no desire, all things are at peace. - Laozi -->
      <h4>password minimum 6 character</h4>
      <h4>dont enter any preregisterd email </h4>
-     <form action="{{route('RegisterFrom')}}"method="POST">
+     <form action="{{route('RegisterFrom')}}"method="POST"    autocomplete="on">
       @csrf
         <h1>Register</h1>
         <input type="text" name="name" placeholder="enter name" required><br>
-        <input type="email" name="email" placeholder="enter email"   required><br>
-        <input type="password" name="password" placeholder="enter password" required><br>
+        <input type="email" name="email" placeholder="enter email" autocomplete="username"  required><br>
+        <input type="password" name="password" placeholder="enter password" autocomplete="new-password" required><br>
         <input type="submit" value="submit">
      </form>
 </div>

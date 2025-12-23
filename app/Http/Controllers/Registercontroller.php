@@ -5,31 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class Registercontroller extends Controller
 {
     public function register(Request $request)
     {
-        // Validation
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|email|unique:users,email',
             'password' => 'required|min:6',
         ]);
 
         // Create user
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->role = 'user';
-        $user->save();
-        if($user){
-            // If saved successfully, redirect to login
-            return redirect()->route('mylogin')->with('success', 'Registration successful!');
-        } else {
-            // If not saved
-            return back()->with('error', 'Registration failed! Please try again.');
-        }
+        $user = User::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
+            'role'     => 'user',
+        ]);
+
+        // Auto login with remember me
+        Auth::login($user, true);
+
+        // Redirect AFTER login
+        return redirect()->route('dashboard')
+            ->with('success', 'Registration & login successful!');
     }
 }

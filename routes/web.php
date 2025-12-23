@@ -5,10 +5,11 @@ use Inertia\Inertia;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\Registercontroller;
 use App\Http\Controllers\Login;
-use App\Http\Controllers\feedbackcontroller;
+use App\Http\Controllers\feedbackscontroller;
 use App\Http\Controllers\admincontrller;
 use App\Http\Controllers\StatusUpdateController;
 use App\Http\Controllers\Csvfilemaker;
+use App\Http\Controllers\feedbackcontroller;
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canRegister' => Features::enabled(Features::registration()),
@@ -49,6 +50,7 @@ Route::get('feedbackform', function(){
 
 Route::post('RegisterFrom',[Registercontroller::class, 'register'])->name('RegisterFrom');
 Route::post('logins', [Login::class, 'userlogin'])->name('userlogin');
+Route::get('/userdashboard', [feedbackscontroller::class, 'userfeedbacksubmit']) ->middleware('auth') ->name('userdashboard');
 Route::post('feedbacksubmit', [feedbackcontroller::class, 'feedbacksubmit']) ->middleware('auth') ->name('feedbacksubmit');
 
 Route::get('admindashboard', [admincontrller::class, 'adminDashboard'])->name('admindashboard');

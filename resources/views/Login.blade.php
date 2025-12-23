@@ -1,12 +1,17 @@
 <div class="container">
     <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
-    <form action="{{ route('userlogin') }}" autocompelet="on" method="POST">
+    <form action="{{ route('userlogin') }}"   autocomplete="on" method="POST">
                 <h3>user login</h3>
 
       @csrf
        <input type="email" name="email" placeholder="enter email" autocomplete="username" required><br>
 
 <input type="password" name="password" placeholder="enter password" autocomplete="current-password" required><br>
+
+<label>
+  <input type="checkbox" name="remember">
+  Remember Me
+</label>
 
 <input type="submit" value="submit">
 
