@@ -12,8 +12,7 @@ In the update in this code to download csv file admin
 
 In database sql file return sql code that is created tabel in xampp database
 
-in this i added a new featuer in that user can see there old feddbacs list 
+in this i added a new featuer in that user can see there old feedbacks list 
 
 and secand Admin get email of evey new feedback submited
 
-this cuurentlu not work in mobile when i try to test but i currenly checking
