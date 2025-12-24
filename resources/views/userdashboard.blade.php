@@ -11,7 +11,7 @@
 <div>
  <table class="feedback-table">
     <tr>
-        <th>#</th>
+        <th>s.no</th>
         <th>Message</th>
         <th>Status</th>
         <th>Created At</th>

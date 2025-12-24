@@ -14,12 +14,11 @@ class Login extends Controller
             'password' => 'required',
         ]);
 
-        // Remember Me checkbox (true / false)
-        $remember = $request->has('remember');
+       
 
         if (Auth::attempt(
             $request->only('email', 'password'),
-            $remember
+        
         )) {
             // Prevent session fixation
             $request->session()->regenerate();

@@ -8,10 +8,7 @@
 
 <input type="password" name="password" placeholder="enter password" autocomplete="current-password" required><br>
 
-<label>
-  <input type="checkbox" name="remember">
-  Remember Me
-</label>
+
 
 <input type="submit" value="submit">
 
@@ -24,7 +21,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
+    padding-top: -100px;
+    padding-bottom: 100px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
   }
   form{
     margin-top: 100px;

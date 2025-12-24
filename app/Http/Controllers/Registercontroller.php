@@ -26,10 +26,10 @@ class Registercontroller extends Controller
         ]);
 
         // Auto login with remember me
-        Auth::login($user, true);
+        
 
         // Redirect AFTER login
-        return redirect()->route('dashboard')
+        return redirect()->route('mylogin')
             ->with('success', 'Registration & login successful!');
     }
 }
